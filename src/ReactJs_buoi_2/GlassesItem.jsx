@@ -1,12 +1,16 @@
 import React from 'react'
 
-export default function GlassesItem() {
+export default function GlassesItem({glass, onSelect}) {
+  const{id, url, name} = glass;
   return (
-    <div className='card bg-light'>
-        <img className='card-img-top' src="./img/g1.jpg" style={{maxWidth: "100%", height: 250}}/>
-        <div className='card-body text-center'>
-            <button className='btn btn-success'>Choose</button>
-        </div>
+    <div className='glassesItem'>
+      <img
+        style={{cursor: "pointer"}}
+        src={url}
+        alt={name}
+        onClick={() => onSelect(glass)}
+      />
     </div>
   )
 }
+
